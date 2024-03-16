@@ -11,7 +11,8 @@ class SignInButton extends StatelessWidget {
       {super.key,
       required this.text,
       required this.usernameController,
-      required this.passwordController, required Null Function() onPressed});
+      required this.passwordController,
+      required Null Function() onPressed});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -33,27 +34,14 @@ class SignInButton extends StatelessWidget {
           http.Response response =
               await http.post(url, headers: headers, body: json);
           if (response.statusCode == 200) {
-            showDialog(
-              context: context,
-              builder: (BuildContext context) {
-                return AlertDialog(
-                  title: Text('Verification Successful'),
-                  content: Text('Login  successful!'),
-                  actions: [
-                    TextButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => Home(),
-                          ),
-                        );
-                      },
-                      child: Text('OK'),
-                    ),
-                  ],
-                );
-              },
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(content: Text('Log in Successful !')),
+            );
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => Home(),
+              ),
             );
             print('Data sent successfully');
           } else {

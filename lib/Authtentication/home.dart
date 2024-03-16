@@ -72,7 +72,7 @@ class _MyWidgetState extends State<Home> {
               const DrawerHeader(
                   child: Center(
                 child: Text(
-                  'To Do List',
+                  'Tick Tick',
                   style: TextStyle(fontSize: 35),
                 ),
               )),

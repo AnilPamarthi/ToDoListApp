@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:lottie/lottie.dart';
 import 'package:to_do_list_app/Authtentication/forget.dart';
 import 'package:to_do_list_app/Authtentication/sign_in_button.dart';
 import 'package:to_do_list_app/Authtentication/signup.dart';
@@ -36,10 +37,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   SizedBox(
                     height: 20,
                   ),
-                  Image.asset(
-                    "lib/assets/login.png",
-                    width: 210,
-                  ),
+                  Lottie.asset("lib/assets/Login.json",
+                      width: MediaQuery.of(context).size.width * 0.7,
+                      height: 300),
                   const ListTile(
                     title: Text(
                       "Login",
